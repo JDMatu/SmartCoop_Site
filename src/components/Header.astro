@@ -1,0 +1,144 @@
+<header class="fixed top-0 z-10 w-full">
+    <nav class="flex items-center justify-between mx-auto py-5 px-5 md:px-40 bg-blueF">
+      
+      <!-- Logo -->
+      <h2 class="flex items-center space-x-3 rtl:space-x-reverse">
+        <img src="/IconApp.png" class="h-8 w-8" alt="representative character" />
+        <span class="self-center text-2xl font-semibold whitespace-nowrap">SMARTCOOP</span>
+      </h2>
+  
+      <!-- Mobile menu button -->
+      <div class="flex items-center space-x-1 md:space-x-0">
+        <button id="nav-toggle" type="button" class="inline-flex items-center p-2 h-10 justify-center text-sm rounded-lg md:hidden focus:outline-none">
+          <span class="sr-only">Open main menu</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24">
+            <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                <path stroke-dasharray="14" stroke-dashoffset="14" d="M4 5h13">
+                    <animate fill="freeze" attributeName="stroke-dashoffset" dur="0.2s" values="14;0" />
+                </path>
+                <path stroke-dasharray="12" stroke-dashoffset="12" d="M4 10h10">
+                    <animate fill="freeze" attributeName="stroke-dashoffset" begin="0.2s" dur="0.2s" values="12;0" />
+                </path>
+                <path stroke-dasharray="20" stroke-dashoffset="20" d="M4 15h16">
+                    <animate fill="freeze" attributeName="stroke-dashoffset" begin="0.4s" dur="0.2s" values="20;0" />
+                </path>
+            </g>
+           </svg>
+        </button>
+      </div>
+  
+      <!-- Navbar -->
+      <div class="hidden md:flex items-center justify-between w-auto" id="navbar">
+        <ul class="flex flex-col font-medium p-4 md:p-0 mt-4 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0">
+          <li><a href="/" class="hover:text-white">Home</a></li>
+          <li class="relative group">
+            <a href="#" class="hover:text-white">Services</a>
+            <ul class="absolute left-0 hidden group-hover:block mt-2 space-y-2 bg-white text-black shadow-lg rounded-md p-2">
+              <li><a href="/service1" class="block px-4 py-2 hover:bg-blue-500 hover:text-white rounded-sm">Service 1</a></li>
+              <li><a href="/service2" class="block px-4 py-2 hover:bg-blue-500 hover:text-white rounded-sm">Service 2</a></li>
+              <li><a href="/service3" class="block px-4 py-2 hover:bg-blue-500 hover:text-white rounded-sm">Service 3</a></li>
+            </ul>
+          </li>
+          <li><a href="/pricing" class="hover:text-white">Pricing</a></li>
+          <li><a href="/contact" class="hover:text-white">Contact</a></li>
+          <li><a href="/portal" class="hover:text-white">Portal</a></li>
+        </ul>
+      </div>
+
+      <!-- Demo Button -->
+      <button class="hidden md:block relative overflow-hidden bg-white rounded-sm py-1 px-5 group">
+        <span class="relative z-10 font-bold text-black">Demo</span>
+        <div class="absolute inset-0 bg-blue-500 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300"></div>
+    </button>
+    </nav>
+  
+    <!-- Fullscreen mobile menu -->
+    <div id="mobile-menu" class="fixed inset-0 bg-blueF hidden z-50 flex-col p-8 md:hidden">
+      
+      <!-- Header with logo and close button -->
+      <div class="flex justify-between items-center mb-6">
+        <div class="flex items-center space-x-3">
+          <img src="/IconApp.png" class="h-8 w-8" alt="SmartCoop Logo" />
+          <span class="text-2xl font-semibold text-white">SMARTCOOP</span>
+        </div>
+        <button id="close-menu" class="text-white text-4xl">
+          &times;
+        </button>
+      </div>
+  
+      <!-- Demo Button -->
+      <div class="flex justify-center mt-12 mb-28">
+        <button class="relative overflow-hidden bg-light-blue rounded-sm w-full py-1 h-14 px-5 group">
+          <p class="relative z-10 font-bold text-white text-2xl flex items-center justify-center">
+                <span class="w-full">Demo</span> 
+                <svg class="mx-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 16 16">
+                    <path fill="currentColor" d="M10.586 4H4V2h10v10h-2V5.414l-8.293 8.293l-1.414-1.414z" />
+                </svg>
+            </p>
+          <div class="absolute inset-0 bg-blue-500 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300"></div>
+        </button>
+      </div>
+  
+      <!-- Centered menu options -->
+      <div class=" text-white">
+        <ul class="flex flex-col items-center justify-center flex-grow text-2xl">
+            <li class="border-t-2 w-full text-center py-5"><a href="/" class="hover:text-blue-300">Home</a></li>
+            <li class="border-t-2 w-full text-center py-5 flex justify-center items-center cursor-pointer" id="services-toggle">
+                <a class="hover:text-blue-300 flex items-center">Services
+                  <svg id="services-arrow" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="ml-2 w-6 h-6 transition-transform duration-300">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </a>
+              </li>
+            
+              <!-- Submenu for services -->
+              <ul id="services-list-mobile" class="hidden space-y-2 mb-7">
+                <li class="border-y-2 w-60 text-center">
+                  <a href="/service1" class="block">Service 1</a>
+                </li>
+                <li class="border-b-2 w-60 text-center">
+                  <a href="/service2" class="block">Service 2</a>
+                </li>
+                <li class="border-b-2 w-60 text-center">
+                  <a href="/service3" class="block">Service 3</a>
+                </li>
+              </ul>
+            <li class="border-t-2 w-full text-center py-5"><a href="/pricing" class="hover:text-blue-300">Pricing</a></li>
+            <li class="border-t-2 w-full text-center py-5"><a href="/contact" class="hover:text-blue-300">Contact</a></li>
+            <li class="border-t-2 w-full text-center py-5"><a href="/portal" class="hover:text-blue-300">Portal</a></li>
+        </ul>
+      </div>
+    </div>
+  
+  </header>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const navToggle = document.getElementById('nav-toggle');
+      const closeMenu = document.getElementById('close-menu');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const servicesToggle = document.getElementById('services-toggle');
+      const servicesListMobile = document.getElementById('services-list-mobile');
+      const servicesArrow = document.getElementById('services-arrow');
+  
+      // Toggle mobile menu
+      navToggle.addEventListener('click', function () {
+        mobileMenu.classList.remove('hidden');
+      });
+  
+      // Close mobile menu
+      closeMenu.addEventListener('click', function () {
+        mobileMenu.classList.add('hidden');
+      });
+  
+
+      servicesToggle.addEventListener('click', function () {
+          servicesListMobile.classList.toggle('hidden');            
+          servicesArrow.classList.toggle('rotate-180');
+      });
+    });
+
+
+    
+  </script>
+  
