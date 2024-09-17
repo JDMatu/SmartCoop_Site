@@ -1,17 +1,33 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
-import Header from '../components/Header.astro';
 import Hero from '../components/Hero.astro';
+import MVV from '../components/MVV.astro';
+import Sponsort from '../components/Sponsort.astro';
+import TopServices from '../components/TopServices.astro';
+import Pricing from '../components/Pricing.astro';
+import Team from '../components/Team.astro';
 ---
 
 <Layout title="SmartCoop Oficial site">
-	<main class="h-[400vh]">
-		<Header />
-		<section id="Hero" class="h-screen w-full pt-32 md:p-48">
-			<Hero />
-		</section>
-		
-	</main>
+
+	<section id="Hero" class="h-fit lg:h-fit w-full pt-28 lg:pb-12 bg-blueF text-WhiteF">
+		<Hero />
+	</section>
+	<section id="MVV" class="h-fit w-full pb-10 pt-24 lg:pt-40 lg:px-28 bg-WhiteF text-blueF">
+		<MVV />
+		<Sponsort />
+	</section>
+	<section id="TopServices" class="h-fit w-full bg-blueF text-WhiteF" style="background-image: url('Slides/slide2.webp');">
+		<TopServices />
+	</section>
+	<section id="Pricing" class="h-fit w-full pt-24 lg:pt-32 bg-WhiteF text-blueF">
+		<Pricing />
+	</section>
+	<section id="Team" class="h-fit w-full py-10 lg:py-24 lg:px-10 xl:px-32 bg-black text-WhiteF">
+		<Team />
+	</section>
+	
+	
+
 </Layout>
 

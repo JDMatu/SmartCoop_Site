@@ -1,15 +1,21 @@
-<header class="fixed top-0 z-10 w-full">
-    <nav class="flex items-center justify-between mx-auto py-5 px-5 md:px-40 bg-blueF">
+---
+// Header.astro
+
+---
+
+
+<header class="fixed top-0 z-50 w-full">
+    <nav class="flex items-center justify-between mx-auto py-5 px-5 lg:px-40 text-WhiteF">
       
       <!-- Logo -->
-      <h2 class="flex items-center space-x-3 rtl:space-x-reverse">
-        <img src="/IconApp.png" class="h-8 w-8" alt="representative character" />
+      <h2 class="flex items-center rtl:space-x-reverse">
+        <img id="logo" src="/IconApp.png" alt="Logo" class="w-8 h-8 mr-3 transition-colors">
         <span class="self-center text-2xl font-semibold whitespace-nowrap">SMARTCOOP</span>
       </h2>
   
       <!-- Mobile menu button -->
       <div class="flex items-center space-x-1 md:space-x-0">
-        <button id="nav-toggle" type="button" class="inline-flex items-center p-2 h-10 justify-center text-sm rounded-lg md:hidden focus:outline-none">
+        <button id="nav-toggle" type="button" class="inline-flex items-center p-2 h-10 justify-center text-sm rounded-lg lg:hidden focus:outline-none">
           <span class="sr-only">Open main menu</span>
           <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24">
             <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
@@ -28,32 +34,32 @@
       </div>
   
       <!-- Navbar -->
-      <div class="hidden md:flex items-center justify-between w-auto" id="navbar">
+      <div class="hidden lg:flex items-center justify-between w-auto" id="navbar">
         <ul class="flex flex-col font-medium p-4 md:p-0 mt-4 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0">
-          <li><a href="/" class="hover:text-white">Home</a></li>
+          <li><a href="/" class="hover:text-light-blue ">Home</a></li>
+          <li><a href="/about" class="hover:text-light-blue">Sobre Nosotros</a></li>
           <li class="relative group">
-            <a href="#" class="hover:text-white">Services</a>
-            <ul class="absolute left-0 hidden group-hover:block mt-2 space-y-2 bg-white text-black shadow-lg rounded-md p-2">
-              <li><a href="/service1" class="block px-4 py-2 hover:bg-blue-500 hover:text-white rounded-sm">Service 1</a></li>
-              <li><a href="/service2" class="block px-4 py-2 hover:bg-blue-500 hover:text-white rounded-sm">Service 2</a></li>
-              <li><a href="/service3" class="block px-4 py-2 hover:bg-blue-500 hover:text-white rounded-sm">Service 3</a></li>
+            <a class="hover:text-light-blue">Servicios</a>
+            <ul class="absolute w-48 left-0 hidden group-hover:block mt-2 space-y-2 bg-white text-black shadow-lg rounded-md p-2">
+              <li><a href="/service1" class="block p-2 hover:bg-blue-500 hover:text-white rounded-sm">Service 1</a></li>
+              <li><a href="/service2" class="block p-2 hover:bg-blue-500 hover:text-white rounded-sm">Service 2</a></li>
+              <li><a href="/service3" class="block p-2 hover:bg-blue-500 hover:text-white rounded-sm">Service 3</a></li>
             </ul>
           </li>
-          <li><a href="/pricing" class="hover:text-white">Pricing</a></li>
-          <li><a href="/contact" class="hover:text-white">Contact</a></li>
-          <li><a href="/portal" class="hover:text-white">Portal</a></li>
+          <li><a href="/contact" class="hover:text-light-blue">Contacto</a></li>
+          <li><a href="/portal" class="hover:text-light-blue">Portal</a></li>
         </ul>
       </div>
 
       <!-- Demo Button -->
-      <button class="hidden md:block relative overflow-hidden bg-white rounded-sm py-1 px-5 group">
-        <span class="relative z-10 font-bold text-black">Demo</span>
+      <button id="demobtn" class="hidden lg:block relative overflow-hidden bg-WhiteF text-blueF rounded-sm py-1 px-5 group">
+        <span class="relative z-10 font-bold">Demo</span>
         <div class="absolute inset-0 bg-blue-500 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300"></div>
     </button>
     </nav>
   
     <!-- Fullscreen mobile menu -->
-    <div id="mobile-menu" class="fixed inset-0 bg-blueF hidden z-50 flex-col p-8 md:hidden">
+    <div id="mobile-menu" class="fixed inset-0 bg-blueF hidden z-10 flex-col p-8 lg:hidden">
       
       <!-- Header with logo and close button -->
       <div class="flex justify-between items-center mb-6">
@@ -131,14 +137,64 @@
         mobileMenu.classList.add('hidden');
       });
   
-
       servicesToggle.addEventListener('click', function () {
           servicesListMobile.classList.toggle('hidden');            
           servicesArrow.classList.toggle('rotate-180');
       });
+      
     });
 
 
     
   </script>
+
+<script>
+  window.addEventListener("scroll", () => {
+    const sections = document.querySelectorAll("section");
+    const navbar = document.querySelector("nav");
+    const logo: any = document.getElementById("logo");
+    const demoBtn = document.getElementById("demobtn");
+    
+    let currentSectionId = "";
+  
+    sections.forEach((section) => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.clientHeight;
+  
+      // Detecta cuando el scroll alcanza la parte superior de la sección
+      if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+        currentSectionId = section.getAttribute("id") || "";
+      }
+    });
+  
+    // Verifica si el navbar existe antes de aplicar las clases
+    if (navbar) {
+      // Elimina los colores previos del navbar
+      navbar.classList.remove("bg-blueF", "bg-white", "text-WhiteF", "text-blueF");
+      demoBtn.classList.remove("bg-white", "bg-light-blue", "text-blueF", "text-WhiteF");
+
+      // Añade el color de fondo y texto basado en la sección activa
+      const activeSection = document.getElementById(currentSectionId);
+      if (activeSection) {
+        if (activeSection.classList.contains("bg-blueF")) {
+          logo.src="/IconApp.png"  // Cambia al logo blanco
+          navbar.classList.add("bg-blueF", "text-WhiteF");
+          demoBtn.classList.add("bg-white", "text-blueF");
+
+          
+        } else if (activeSection.classList.contains("bg-WhiteF")) {
+          navbar.classList.add("bg-white", "text-blueF");
+          logo.src = "/faviconLogo.png";  // Cambia al logo negro
+          demoBtn.classList.add("bg-light-blue", "text-WhiteF");
+
+        } else if (activeSection.classList.contains("bg-black")) {
+          logo.src="/IconApp.png"  // Cambia al logo blanco
+          navbar.classList.add("bg-blueF", "text-WhiteF");
+          demoBtn.classList.add("bg-white", "text-blueF");
+        }
+      }
+    }
+  });
+  </script>
+  
   
