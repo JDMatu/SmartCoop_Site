@@ -1,0 +1,101 @@
+---
+//Top Services
+
+---
+
+
+<div class="flex flex-col">
+    <div class="flex flex-col text-center mt-10 mb-5 xl:mt-16 justify-center">
+        <h1 class="text-2xl lg:text-5xl mb-5">Top Services</h1>
+        <select class="flex lg:hidden h-10 text-black p-2 w-2/3 mx-auto" id="serviceSelect">
+            <option value="contabilidad">Contabilidad</option>
+            <option value="votaciones">Votaciones</option>
+            <option value="ventas">Ventas</option>
+            <option value="casilleros">Casilleros</option>
+        </select>
+    </div>
+    <div class="flex lg:h-96 flex-col lg:flex-row">
+
+        <div class="w-full lg:w-1/2 flex justify-end px-10 lg:px-20 items-center">
+            <img id="serviceImage" class="w-full h-full lg:w-5/6 lg:h-5/6 rounded-sm" src="/Services/Contabilidad.webp" alt="">
+        </div>
+        <div class="w-full lg:w-1/2 pt-10 lg:py-20 text-center lg:text-start">
+            <svg id="serviceSVG" class="hidden lg:block absolute z-0 text-white opacity-20 -translate-y-20" xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 24 24"><path fill="currentColor" d="m6 16.5l-3 2.94V11h3m5 3.66l-1.57-1.34L8 14.64V7h3m5 6l-3 3V3h3m2.81 9.81L17 11h5v5l-1.79-1.79L13 21.36l-3.47-3.02L5.75 22H3l6.47-6.34L13 18.64"/></svg>
+            <h3 id="serviceTitle" class="relative text-3xl font-bold lg:text-5xl pb-6 lg:pb-12">Contabilidad</h3>
+            <p id="serviceDescription" class="text-lg px-10 lg:px-0 lg:w-2/3">Nuestro servicio de contabilidad ofrece una plataforma completa para la administración financiera de tu cooperativa. Controla ingresos, egresos, y obtén reportes financieros precisos al instante. Simplifica la gestión de cuentas y toma decisiones con información en tiempo real.
+                
+            </p>
+        </div>
+    </div>
+    <nav class="my-10 text-gray-300">
+        <ul class="hidden lg:flex justify-evenly mt-10">
+            <li data-service="contabilidad" class="active flex gap-3 text-2xl text-white border-b-white border-b-2 p-3  hover:text-white transition duration-300"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="m6 16.5l-3 2.94V11h3m5 3.66l-1.57-1.34L8 14.64V7h3m5 6l-3 3V3h3m2.81 9.81L17 11h5v5l-1.79-1.79L13 21.36l-3.47-3.02L5.75 22H3l6.47-6.34L13 18.64"/></svg>Contabilidad</li>
+            <li data-service="votaciones" class="flex gap-3 text-2xl p-3 hover:text-white transition duration-300"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 512 512"><path fill="currentColor" d="M494 21.621c-14.947 8.43-29.566 17.581-43.67 29.227l7.318 38.547C471.923 93.66 483.583 95.26 494 95.36zm-98.982 24.512c-15.283-.085-32.48 2.596-53.832 6.834l-.22.043l-.22.033c-14.77 2.177-40.794 12.065-66.465 38.867l44.27 11.766c.972-1.493 5.936-9.004 6.88-10.555q7.686 4.684 15.372 9.365c-12.475 20.475-26.742 35.556-43.934 54.522c-2.123 4.718.977 8.199 4.36 10.14c5.22 2.931 14.1 3.09 16.437 2.102c23.932-15.768 40.819-35.928 55.963-56.271l5.469.964c11.501 2.031 26.47 1.058 38.707-2.853c11.098-3.548 19.272-9.357 22.662-15.688L432.54 53.65c-12.044-5.214-24.039-7.442-37.523-7.517zM227.932 98.717l-29.436 115.986l9.643.297H311.27l.9-.209l6.804-27.092c-8.86 1.9-18.296-.217-26.557-4.855c-5.188-2.913-10.024-7.24-12.621-13.434c-7.797-19.938 15.857-37.297 28.724-52.75l-80.59-17.943zM69.562 201l-23 46h418.875l-23-46H334.195l-3.517 14H352v18H160v-18h19.852l3.552-14H69.563zM41 265v222h430V265zm14 14h402v194H55zm18 18v118.238l34.502-74.994l73.36 31.762l66.652-45.84l37.513 57.273l50.11-4.595l31.3-39.332L439 394.627V297zm169.543 54.43l-90.63 62.33l27.01 41.24h95.606l19.666-24.71zm-126.045 12.326L74.521 455h82.885l-30.193-46.098l36.144-24.857l-46.859-20.29zm253.065.732L297.533 455h140.54l.927-1.166v-36.602zm-49.944 33.854l-23.426 2.148l9.805 14.969z"/></svg>Votaciones</li>
+            <li data-service="ventas" class="flex gap-3 text-2xl p-3 hover:text-white transition duration-300"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 256 256"><path fill="currentColor" d="M230.14 58.87A8 8 0 0 0 224 56H62.68L56.6 22.57A8 8 0 0 0 48.73 16H24a8 8 0 0 0 0 16h18l25.56 140.29a24 24 0 0 0 5.33 11.27a28 28 0 1 0 44.4 8.44h45.42a27.75 27.75 0 0 0-2.71 12a28 28 0 1 0 28-28H91.17a8 8 0 0 1-7.87-6.57L80.13 152h116a24 24 0 0 0 23.61-19.71l12.16-66.86a8 8 0 0 0-1.76-6.56M104 204a12 12 0 1 1-12-12a12 12 0 0 1 12 12m96 0a12 12 0 1 1-12-12a12 12 0 0 1 12 12"/></svg>Ventas</li>
+            <li data-service="casilleros" class="flex gap-3 text-2xl p-3 hover:text-white transition duration-300"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M3 2h18a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2m10 2v16h8V4zM3 4v16h8V4zm2 9h2v4H5zm0-7h4v1.5H5zm0 3h4v1.5H5zm10 4h2v4h-2zm0-7h4v1.5h-4zm0 3h4v1.5h-4z"/></svg>Casilleros</li>
+        </ul>
+    </nav>
+</div>
+
+<script>
+    const services = {
+      contabilidad: {
+        title: 'Contabilidad',
+        description: 'Nuestro servicio de contabilidad ofrece una plataforma completa para la administración financiera de tu cooperativa. Controla ingresos, egresos, y obtén reportes financieros precisos al instante. Simplifica la gestión de cuentas y toma decisiones con información en tiempo real.',
+        image: '/Services/Contabilidad.webp',
+        svg: '<svg id="serviceSVG" class="hidden lg:block absolute z-0 text-white opacity-20 -translate-y-20" xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 24 24"><path fill="currentColor" d="m6 16.5l-3 2.94V11h3m5 3.66l-1.57-1.34L8 14.64V7h3m5 6l-3 3V3h3m2.81 9.81L17 11h5v5l-1.79-1.79L13 21.36l-3.47-3.02L5.75 22H3l6.47-6.34L13 18.64"/></svg>',
+      },
+      votaciones: {
+        title: 'Votaciones',
+        description: 'Facilita los procesos democráticos en tu cooperativa con nuestra plataforma de votaciones electrónicas. Asegura la participación de los socios, garantiza transparencia y mejora la eficiencia en la toma de decisiones mediante votaciones rápidas y seguras.',
+        image: '/Services/Votaciones.webp',
+        svg: '<svg id="serviceSVG" class="hidden lg:block absolute z-0 text-white opacity-20 -translate-y-20" xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 512 512"><path fill="currentColor" d="M494 21.621c-14.947 8.43-29.566 17.581-43.67 29.227l7.318 38.547C471.923 93.66 483.583 95.26 494 95.36zm-98.982 24.512c-15.283-.085-32.48 2.596-53.832 6.834l-.22.043l-.22.033c-14.77 2.177-40.794 12.065-66.465 38.867l44.27 11.766c.972-1.493 5.936-9.004 6.88-10.555q7.686 4.684 15.372 9.365c-12.475 20.475-26.742 35.556-43.934 54.522c-2.123 4.718.977 8.199 4.36 10.14c5.22 2.931 14.1 3.09 16.437 2.102c23.932-15.768 40.819-35.928 55.963-56.271l5.469.964c11.501 2.031 26.47 1.058 38.707-2.853c11.098-3.548 19.272-9.357 22.662-15.688L432.54 53.65c-12.044-5.214-24.039-7.442-37.523-7.517zM227.932 98.717l-29.436 115.986l9.643.297H311.27l.9-.209l6.804-27.092c-8.86 1.9-18.296-.217-26.557-4.855c-5.188-2.913-10.024-7.24-12.621-13.434c-7.797-19.938 15.857-37.297 28.724-52.75l-80.59-17.943zM69.562 201l-23 46h418.875l-23-46H334.195l-3.517 14H352v18H160v-18h19.852l3.552-14H69.563zM41 265v222h430V265zm14 14h402v194H55zm18 18v118.238l34.502-74.994l73.36 31.762l66.652-45.84l37.513 57.273l50.11-4.595l31.3-39.332L439 394.627V297zm169.543 54.43l-90.63 62.33l27.01 41.24h95.606l19.666-24.71zm-126.045 12.326L74.521 455h82.885l-30.193-46.098l36.144-24.857l-46.859-20.29zm253.065.732L297.533 455h140.54l.927-1.166v-36.602zm-49.944 33.854l-23.426 2.148l9.805 14.969z"/></svg>',
+      },
+      ventas: {
+        title: 'Ventas',
+        description: 'Optimiza tus procesos comerciales con nuestro sistema de ventas, diseñado para facilitar el seguimiento de productos, la creación de facturas y la gestión de clientes. Todo desde un solo lugar, con reportes detallados y seguimiento en tiempo real',
+        image: '/Services/delivery.webp',
+        svg: '<svg id="serviceSVG" class="hidden lg:block absolute z-0 text-white opacity-20 -translate-y-20" xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 256 256"><path fill="currentColor" d="M230.14 58.87A8 8 0 0 0 224 56H62.68L56.6 22.57A8 8 0 0 0 48.73 16H24a8 8 0 0 0 0 16h18l25.56 140.29a24 24 0 0 0 5.33 11.27a28 28 0 1 0 44.4 8.44h45.42a27.75 27.75 0 0 0-2.71 12a28 28 0 1 0 28-28H91.17a8 8 0 0 1-7.87-6.57L80.13 152h116a24 24 0 0 0 23.61-19.71l12.16-66.86a8 8 0 0 0-1.76-6.56M104 204a12 12 0 1 1-12-12a12 12 0 0 1 12 12m96 0a12 12 0 1 1-12-12a12 12 0 0 1 12 12"/></svg>',
+      },
+      casilleros: {
+        title: 'Casilleros',
+        description: 'Nuestra solución de administración de casilleros permite la asignación, control y monitoreo de los casilleros de tu cooperativa. Mejora la experiencia de tus usuarios con una gestión eficiente y accesible, asegurando que cada miembro tenga su espacio disponible de manera ordenada.',
+        image: '/Services/Casilleros.webp',
+        svg: '<svg id="serviceSVG" class="hidden lg:block absolute z-0 text-white opacity-20 -translate-y-20" xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 24 24"><path fill="currentColor" d="M3 2h18a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2m10 2v16h8V4zM3 4v16h8V4zm2 9h2v4H5zm0-7h4v1.5H5zm0 3h4v1.5H5zm10 4h2v4h-2zm0-7h4v1.5h-4zm0 3h4v1.5h-4z"/></svg>',
+      },
+    };
+  
+
+    document.getElementById('serviceSelect').addEventListener('change', function (e) {
+      const selectElement = e.target as HTMLSelectElement;
+      updateService(selectElement.value);
+    });
+  
+    document.querySelectorAll('nav ul li').forEach((li) => {
+      li.addEventListener('click', function () {
+        const serviceKey = this.getAttribute('data-service');
+        updateService(serviceKey);
+      });
+    });
+  
+    function updateService(serviceKey) {
+      const service = services[serviceKey];
+      let image = document.getElementById('serviceImage') as HTMLImageElement;
+      let svgElement = document.getElementById('serviceSVG');
+
+      image.src = service.image;
+      image.alt = service.title;
+      document.getElementById('serviceTitle').textContent = service.title;
+      document.getElementById('serviceDescription').textContent = service.description;
+      
+        // Actualizar el SVG
+        svgElement.outerHTML = service.svg;
+        
+  
+      // Actualizar la clase activa
+      document.querySelectorAll('nav ul li').forEach((li) => li.classList.remove('active', 'text-white', 'border-b-white', 'border-b-2'));
+      document.querySelector(`li[data-service="${serviceKey}"]`).classList.add('active', 'text-white', 'border-b-white', 'border-b-2');
+
+        
+    }
+  </script>
