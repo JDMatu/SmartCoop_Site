@@ -94,6 +94,8 @@
 <script>
     document.getElementById('contactForm').addEventListener('submit', async (event) => {
       event.preventDefault();
+
+      console.log('Formulario enviado'); // Para verificar que el evento se dispara
   
       const form = event.target as HTMLFormElement;
       const formData = new FormData(form);
@@ -110,6 +112,7 @@
         const result = await response.json();
         alert(result.message);
       } catch (error) {
+        console.error('Error al enviar el correo:', error); // Para ver errores en consola
         alert('Error al enviar el correo');
       }
     });
