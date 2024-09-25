@@ -92,28 +92,33 @@
 </div>
 
 <script>
-    document.getElementById('contactForm').addEventListener('submit', async (event) => {
-      event.preventDefault();
-
-      console.log('Formulario enviado'); // Para verificar que el evento se dispara
+    document.addEventListener('DOMContentLoaded', () => {
+        console.log('DOM cargado');
+      const form = document.getElementById('contactForm') as HTMLFormElement;
+      form.addEventListener('submit', async (event) => {
+        event.preventDefault();
   
-      const form = event.target as HTMLFormElement;
-      const formData = new FormData(form);
-      const data = Object.fromEntries(formData.entries());
+        console.log('Formulario enviado'); // Para verificar que el evento se dispara
   
-      try {
-        const response = await fetch('/api/send-email', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(data),
-        });
-        const result = await response.json();
-        alert(result.message);
-      } catch (error) {
-        console.error('Error al enviar el correo:', error); // Para ver errores en consola
-        alert('Error al enviar el correo');
-      }
+        const formData = new FormData(form);
+        const data = Object.fromEntries(formData.entries());
+  
+        try {
+          const response = await fetch('/api/send-email', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+          });
+          const result = await response.json();
+          alert(result.message);
+        } catch (error) {
+          console.error('Error al enviar el correo:', error); // Para ver errores en consola
+          alert('Error al enviar el correo');
+        }
+      });
     });
+    
+   
   </script>
