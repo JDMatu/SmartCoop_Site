@@ -81,29 +81,32 @@ const { title } = Astro.props;
 </style>
 
 <script>
-    // Obtener el enlace y el modal
-    const openModal = document.getElementById('open-modal');
-    const videoModal = document.getElementById('video-modal');
-    const closeModal = document.getElementById('close-modal');
+    document.addEventListener('DOMContentLoaded', function() {
+        const openModal = document.getElementById('open-modal');
+        const videoModal = document.getElementById('video-modal');
+        const closeModal = document.getElementById('close-modal');
 
-    // Abrir el modal al hacer clic en el enlace
-    openModal.addEventListener('click', function(event) {
-        event.preventDefault(); // Evita la navegación por defecto
-        videoModal.classList.remove('invisible'); // Muestra el modal
-        videoModal.classList.add('visible');
-    });
+        if (openModal && videoModal && closeModal) {
+            // Abrir el modal al hacer clic en el enlace
+            openModal.addEventListener('click', function(event) {
+                event.preventDefault(); // Evita la navegación por defecto
+                videoModal.classList.remove('invisible'); // Muestra el modal
+                videoModal.classList.add('visible');
+            });
 
-    // Cerrar el modal al hacer clic en el botón de cierre
-    closeModal.addEventListener('click', function() {
-        videoModal.classList.remove('visible'); // Oculta el modal
-        videoModal.classList.add('invisible');
-    });
+            // Cerrar el modal al hacer clic en el botón de cierre
+            closeModal.addEventListener('click', function() {
+                videoModal.classList.remove('visible'); // Oculta el modal
+                videoModal.classList.add('invisible');
+            });
 
-    // Cerrar el modal si se hace clic fuera del contenido del modal
-    window.addEventListener('click', function(event) {
-        if (event.target === videoModal) {
-            videoModal.classList.remove('visible'); // Oculta el modal
-            videoModal.classList.add('invisible');
+            // Cerrar el modal si se hace clic fuera del contenido del modal
+            window.addEventListener('click', function(event) {
+                if (event.target === videoModal) {
+                    videoModal.classList.remove('visible'); // Oculta el modal
+                    videoModal.classList.add('invisible');
+                }
+            });
         }
     });
 </script>
