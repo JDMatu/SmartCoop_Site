@@ -1,0 +1,195 @@
+---
+const Service = [
+    {name: 'Contabilidad', description: 'Optimiza la gestión financiera de tu cooperativa con nuestra herramienta de contabilidad, asegurando procesos claros, informes precisos y cumplimiento normativo, todo en un solo lugar.'},
+    {name: 'Ahorros', description: 'Facilita la administración de los ahorros de tus socios con un sistema seguro y transparente, que permite el seguimiento en tiempo real y genera confianza entre los miembros.'},
+    {name: 'Casilleros', description: 'Gestiona de manera eficiente los casilleros de tus socios, con un sistema que asegura la disponibilidad y el uso correcto de los espacios asignados, mejorando la organización.'},
+    {name: 'Controlador Usuarios', description: 'Administra de forma segura y confiable a los usuarios de tu cooperativa, con controles de acceso robustos y opciones de personalización para satisfacer tus necesidades.'},
+    {name: 'Votaciones', description: 'Facilita la gestión de votaciones de manera segura y eficiente, asegurando un proceso transparente que fomenta la participación activa de todos los miembros.'},
+    {name: 'Comites', description: 'Gestiona los comités de tu cooperativa de forma centralizada, permitiendo una colaboración eficaz y un seguimiento detallado de las decisiones y actividades.'},
+    {name: 'Calendario', description: 'Organiza y agenda los eventos de tu cooperativa con nuestro calendario integrado, asegurando que todos los miembros estén informados y puedan participar.'},
+    {name: 'Edicion de Páginas', description: 'Modifica y actualiza las páginas de tu cooperativa de manera intuitiva, asegurando que la información siempre esté actualizada y accesible.'},
+    {name: 'Noticias', description: 'Mantén a tus socios informados sobre las novedades de la cooperativa con un sistema de noticias que facilita la comunicación y fortalece la comunidad.'},
+    {name: 'Ventas', description: 'Optimiza la gestión de ventas de tu cooperativa con un sistema que permite un seguimiento detallado y mejora la experiencia del usuario.'},
+];
+
+
+---
+
+<div class="lg:w-2/3 md:10 lg:mb-16">
+    <h1 class="text-4xl sm:text-5xl lg:text-6xl mb-5">
+        Descubre las Potencialidades de Nuestro Software
+    </h1>
+    <p class="lg:text-lg">En un mundo donde la eficiencia y la transparencia son clave, nuestro software está diseñado para potenciar la operatividad de tu cooperativa. Desde la gestión financiera hasta la administración de eventos y votaciones, cada función está optimizada para brindar una experiencia intuitiva y segura. Únete a la transformación digital y mejora la colaboración entre tus socios.</p>
+</div>
+
+<div class="flex flex-col justify-between md:flex-row h-fit md:mb-20">
+    <!-- Sidebar for navigation -->
+    <div class="w-full lg:w-2/5 py-8 overflow-auto">
+        <ul class="space-y-6">
+            {Service.map((service, index) => (
+                <li>
+                    <button 
+                        class="cursor-pointer service-button text-2xl flex items-center gap-3" 
+                        data-service-id={index}>
+                        {service.name}
+                    </button>
+                    <div id={`content-mobile-${index}`} class="hidden lg:hidden mt-8 text-white relative" style="background-image: url('Slides/IoT-1.webp');">
+                        <span class="absolute right-0 p-1 hover:text-light-blue">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+                                <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 6L6 18M8 6h10v10"/>
+                            </svg>
+                        </span>
+                        <p class="p-5 md:text-lg" style="padding: 85px 15px 20px;">{service.description}</p>
+                    </div>
+                </li>
+            ))}
+        </ul>
+    </div>
+
+    <!-- Main content area for desktop -->
+    <div class="hidden lg:block lg:w-3/5 text-white  bg-gradient-to-tr from-blueF from-30% via-[rgb(18,11,111)] via-80% to to-[#070758] relative overflow-hidden" id="service-container">
+        <svg class="absolute inset-0 w-full h-full animated-svg"  viewBox="0 0 903 742" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M1247.42 711.014C1264.94 642.613 1270.77 571.731 1264.64 501.381C1132.63 314.127 802.593 -10.6934 654.385 -81.7349C624.759 -82.5589 595.11 -81.4615 565.625 -78.4496C754.011 41.0479 1041 348.621 1247.42 711.014ZM1230.8 772.077C1211.06 824.909 1184.34 874.879 1151.35 920.662V920.457C1053.16 540.581 585.496 73.0742 420.825 -44.1104C449.252 -54.3988 478.43 -62.495 508.1 -68.3273C825.503 187.796 1030.11 385.635 1230.8 772.077ZM1126.72 947.35C1092.21 990.633 1052.14 1029.17 1007.55 1061.95C839.143 532.302 440.796 185.641 221.725 70.0187C243.191 51.0195 266.096 33.7169 290.236 18.2662C648.995 215.214 830.733 446.458 1126.72 947.35ZM808.666 1160.98C862.823 1144.33 914.886 1121.47 963.825 1092.85C775.462 613.056 456.127 213.744 183.728 104.86C167.946 121.12 153.188 137.793 140.275 153.642C479.082 338.889 703.109 688.802 808.666 1162.21V1160.98ZM622.189 1185C670.045 1184.5 717.756 1179.62 764.725 1170.43C627.521 716.154 531.335 464.802 108.444 196.011C88.1984 227.156 70.1081 259.651 54.3 293.269C431.252 494.555 631.828 976.738 621.368 1185H622.189ZM504.973 1170.16C527.984 1174.97 551.259 1178.4 574.675 1180.44C531.624 789.747 267.167 498.987 34.0755 346.41C25.6577 370.966 18.8103 396.035 13.575 421.465C129.198 520.784 387.3 783.784 505.588 1170.16H504.973ZM1248.75 391.397L1248.9 391.986V391.576L1248.75 391.397ZM1248.75 391.397C1236.7 344.082 1219.03 298.36 1196.12 255.197C1120.25 108.784 989.203 -1.80859 831.619 -52.4226C796.405 -63.3519 760.436 -71.714 724 -77.4424C901.842 18.287 1137.56 258.468 1248.75 391.397ZM457.025 1157.65C456.722 1157.58 456.419 1157.5 456.116 1157.43C335.293 838.279 171.416 658.366 46.361 521.074L46.3525 521.065C31.5756 504.842 17.3407 489.214 3.78297 474.022C0.568709 505.754 -0.5993 537.659 0.286723 569.541C117.093 678.824 237.602 859.386 333.638 1107.12C371.84 1129.67 413.088 1146.61 456.116 1157.43L456.202 1157.65H457.025ZM262.45 1066.5C230.286 1042.78 200.116 1016.45 172.243 987.757V988.582C119.285 930.81 76.8801 864.097 46.9781 791.509C28.0975 745.289 15.3453 696.773 9.04998 647.209C29.8952 682.076 58.5373 725.879 89.3873 773.058C155.023 873.435 230.652 989.096 262.45 1066.5Z" fill="url(#paint0_radial_15381_41125)"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M1247.42 711.014C1264.94 642.613 1270.77 571.731 1264.64 501.381C1132.63 314.127 802.593 -10.6934 654.385 -81.7349C624.759 -82.5589 595.11 -81.4615 565.625 -78.4496C754.011 41.0479 1041 348.621 1247.42 711.014ZM1230.8 772.077C1211.06 824.909 1184.34 874.879 1151.35 920.662V920.457C1053.16 540.581 585.496 73.0742 420.825 -44.1104C449.252 -54.3988 478.43 -62.495 508.1 -68.3273C825.503 187.796 1030.11 385.635 1230.8 772.077ZM1126.72 947.35C1092.21 990.633 1052.14 1029.17 1007.55 1061.95C839.143 532.302 440.796 185.641 221.725 70.0187C243.191 51.0195 266.096 33.7169 290.236 18.2662C648.995 215.214 830.733 446.458 1126.72 947.35ZM808.666 1160.98C862.823 1144.33 914.886 1121.47 963.825 1092.85C775.462 613.056 456.127 213.744 183.728 104.86C167.946 121.12 153.188 137.793 140.275 153.642C479.082 338.889 703.109 688.802 808.666 1162.21V1160.98ZM622.189 1185C670.045 1184.5 717.756 1179.62 764.725 1170.43C627.521 716.154 531.335 464.802 108.444 196.011C88.1984 227.156 70.1081 259.651 54.3 293.269C431.252 494.555 631.828 976.738 621.368 1185H622.189ZM504.973 1170.16C527.984 1174.97 551.259 1178.4 574.675 1180.44C531.624 789.747 267.167 498.987 34.0755 346.41C25.6577 370.966 18.8103 396.035 13.575 421.465C129.198 520.784 387.3 783.784 505.588 1170.16H504.973ZM1248.75 391.397L1248.9 391.986V391.576L1248.75 391.397ZM1248.75 391.397C1236.7 344.082 1219.03 298.36 1196.12 255.197C1120.25 108.784 989.203 -1.80859 831.619 -52.4226C796.405 -63.3519 760.436 -71.714 724 -77.4424C901.842 18.287 1137.56 258.468 1248.75 391.397ZM457.025 1157.65C456.722 1157.58 456.419 1157.5 456.116 1157.43C335.293 838.279 171.416 658.366 46.361 521.074L46.3525 521.065C31.5756 504.842 17.3407 489.214 3.78297 474.022C0.568709 505.754 -0.5993 537.659 0.286723 569.541C117.093 678.824 237.602 859.386 333.638 1107.12C371.84 1129.67 413.088 1146.61 456.116 1157.43L456.202 1157.65H457.025ZM262.45 1066.5C230.286 1042.78 200.116 1016.45 172.243 987.757V988.582C119.285 930.81 76.8801 864.097 46.9781 791.509C28.0975 745.289 15.3453 696.773 9.04998 647.209C29.8952 682.076 58.5373 725.879 89.3873 773.058C155.023 873.435 230.652 989.096 262.45 1066.5Z" fill="url(#paint1_radial_15381_41125)"/>
+            <defs>
+            <radialGradient id="paint0_radial_15381_41125" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(238.5 91.5) rotate(39.9517) scale(1204.79 4302.59)">
+            <stop stop-color="#071739"/>
+            <stop offset="0.994792" stop-color="#153EAE"/>
+            </radialGradient>
+            <radialGradient id="paint1_radial_15381_41125" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(76.5 528) rotate(10.3843) scale(515.951 1842.58)">
+            <stop stop-color="#071739"/>
+            <stop offset="0.994792" stop-color="#071739" stop-opacity="0"/>
+            </radialGradient>
+            </defs>
+        </svg>
+        
+            
+        {Service.map((service, index) => (
+            <div id={`content-desktop-${index}`} class="hidden h-full w-full relative">
+                <span class="absolute right-0 p-3 hover:text-light-blue">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24">
+                        <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 6L6 18M8 6h10v10"/>
+                    </svg>
+                </span>
+                <div class="h-full flex flex-col justify-end p-16">
+                    <h2 class="text-4xl mb-5">{service.name}</h2>
+                    <p class="text-lg">{service.description}</p>
+                </div>
+            </div>
+        ))}
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const serviceButtons = document.querySelectorAll('.service-button');
+        
+        const showContent = (index) => {
+            // Ocultar todo el contenido
+            document.querySelectorAll('[id^="content-desktop-"]').forEach((el) => el.classList.add('hidden'));
+            document.querySelectorAll('[id^="content-mobile-"]').forEach((el) => el.classList.add('hidden'));
+
+            // Resaltar el botón seleccionado
+            serviceButtons.forEach(button => button.classList.remove('active'));
+            serviceButtons[index].classList.add('active');
+            
+            // Mostrar el contenido seleccionado en escritorio
+            const desktopContent = document.getElementById(`content-desktop-${index}`);
+            if (desktopContent) {
+                desktopContent.classList.remove('hidden');
+            }
+
+            // Mostrar el contenido seleccionado en móvil
+            const mobileContent = document.getElementById(`content-mobile-${index}`);
+            if (mobileContent) {
+                mobileContent.classList.remove('hidden');
+            }
+        };
+
+        showContent(0);
+
+        serviceButtons.forEach((button, index) => {
+            button.addEventListener('mouseenter', () => showContent(index));
+        });
+    });
+</script>
+
+
+<style>
+
+    .active {
+        color: #0f46a0;
+        padding-left: 20px;
+        transition: ease-in-out 0.3s;
+        font-weight: bold;
+    }
+
+    .service-button.active::before {
+        content: "";
+        display: block;
+        width: 35px; /* Ajusta el tamaño de la línea */
+        height: 3px; /* Ajusta el grosor de la línea */
+        background-color: #0f46a0; /* Color de la línea */
+        margin-bottom: 1px; /* Espacio entre la línea y el texto */
+    }
+
+    @keyframes slideInFromTopRight {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+    }
+
+    .animated-svg {
+        animation: slideInFromTopRight 1.5s ease-in-out forwards;
+    }
+
+</style>
+
+
+
+
+
+<!-- <div class="h-fit w-full " id="service-container" >
+    <div class="grid grid-cols-1 lg:grid-cols-3 lg:px-56 gap-x-10 items-center justify-center h-full bg-black bg-opacity-50">
+        {Service.map((service) => (
+            <div class="hover:bg-[#1e96f0] p-5 pb-24 border-b-2 h-fit hover:text-white my-0 service-item"
+                data-bg={service.img}>
+                <h1 class="font-serif text-3xl text-white flex justify-between">
+                    {service.name} 
+                    <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24">
+                        <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 6L6 18M8 6h10v10"/>
+                    </svg>
+                </h1>
+            </div>
+        ))}
+    </div>
+</div>
+
+
+    <script>
+        const defaultImage = 'Services/conta.webp';
+        
+        function updateBackground(img) {
+          const container = document.getElementById('service-container');
+          container.style.backgroundImage = `url(${img})`;
+        }
+      
+        document.addEventListener('DOMContentLoaded', () => {
+          const serviceItems = document.querySelectorAll('.service-item');
+          
+          serviceItems.forEach(item => {
+            item.addEventListener('mouseenter', function() {
+              const img = this.getAttribute('data-bg');
+              updateBackground(img);
+            });
+          });
+      
+          // Restaurar la imagen por defecto al recargar la página
+          const container = document.getElementById('service-container');
+          container.style.backgroundImage = `url(${defaultImage})`;
+        });
+      </script> -->

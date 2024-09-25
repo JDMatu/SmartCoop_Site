@@ -1,0 +1,38 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+---
+
+<Layout title="Portal | SmartCoop Oficial Website">
+
+	<section id="Head_About" class="h-[85vh] lg:h-[92vh] w-full pt-16  bg-blueF text-black" >
+        <div class="bg-WhiteF h-full w-full flex justify-center items-center" style="background-image: url('Slides/IoT-1.webp'); background-size: cover;" >
+            <div class="container flex flex-col justify-between md:bg-WhiteF h-2/3 md:h-fit max-w-xl md:py-6 px-12 lg:px-28 rounded-xl md:shadow-2xl">
+                <h1 class="text-4xl md:text-4xl font-semibold mb-10 text-center text-white md:text-blueF">Ruta a tu <span class="block">Cooperativa</span></h1>
+    
+                <form id="portal-form" class="w-full max-w-lg mx-auto translate-y-10 md:translate-y-0">
+                    <div class="mb-6">
+                        <input
+                            class="bg-transparent border-b-2 border-gray-300 shadow-none focus:outline-none focus:border-white md:focus:border-blueF w-full py-2 px-3 text-white md:text-gray-800 leading-tight"
+                            id="name"
+                            type="text"
+                            placeholder="Nombre del Portal "
+                            required
+                        />
+                    </div>
+            
+                    <div class="flex items-center justify-center">
+                        <button
+                            class="bg-white md:bg-gray-800  hover:bg-blue-700 text-black md:text-white font-bold py-2 px-10 rounded-full focus:outline-none focus:shadow-outline"
+                            type="submit"
+                        >
+                            Continuar
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+	</section>
+
+</Layout>
