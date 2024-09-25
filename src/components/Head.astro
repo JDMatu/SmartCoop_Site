@@ -1,11 +1,11 @@
 ---
-import BTN from "./BTN.astro"
+const {title} = Astro.props
 ---
 
 <div class="container flex-col mx-auto h-fit">
     <div class="text-center mx-6 mt-6 md:mt-0 md:ml-16 z-10 xl:px-48 xl:pt-16">
         <h1 class="text-4xl font-serif md:text-6xl mb-8">
-            Sobre Nosotros
+            {title}
         </h1>
         <span class="flex justify-center gap-3 pb-16">
             <a href="/">
@@ -13,7 +13,7 @@ import BTN from "./BTN.astro"
             </a>
             <p class="flex gap-2 items-center">
                 <svg class="text-gray-400" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 15 15"><path fill="none" stroke="currentColor" d="m13.5 7.5l-4-4m4 4l-4 4m4-4H1"/></svg>
-                Sobre Nosotros
+                {title}
             </p>
         </span>
        

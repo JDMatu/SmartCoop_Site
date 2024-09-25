@@ -6,11 +6,12 @@ import Sponsort from '../components/Sponsort.astro';
 import TopServices from '../components/TopServices.astro';
 import Pricing from '../components/Pricing.astro';
 import Team from '../components/Team.astro';
+import Services from '../components/Services.astro';
 ---
 
-<Layout title="SmartCoop Oficial site">
+<Layout title="SmartCoop Oficial Website">
 
-	<section id="Hero" class="h-fit lg:h-fit w-full pt-28 lg:pb-12 bg-blueF text-WhiteF">
+	<section id="Hero" class="relative h-fit lg:h-fit w-full pt-28 lg:pb-12 bg-blueF text-WhiteF">
 		<Hero />
 	</section>
 	<section id="MVV" class="h-fit w-full pb-10 pt-24 lg:pt-40 lg:px-28 bg-WhiteF text-blueF">
@@ -23,9 +24,13 @@ import Team from '../components/Team.astro';
 	<section id="Pricing" class="h-fit w-full pt-24 lg:pt-32 bg-WhiteF text-blueF">
 		<Pricing />
 	</section>
-	<section id="Team" class="h-fit w-full py-10 lg:py-24 lg:px-10 xl:px-32 bg-black text-WhiteF">
-		<Team />
+	<section id="Services" class="h-fit w-full px-8 pb-10 pt-24 md:px-16 lg:pt-32 lg:px-32 xl:px-64 bg-WhiteF text-blueF">
+		<Services />
 	</section>
+	<!-- <section id="Team" class="h-fit w-full py-10 lg:py-24 lg:px-10 xl:px-32 bg-blueF text-WhiteF opacity-[0.96]">
+		<Team />
+	</section> -->
+	<hr>
 	
 	
 

@@ -5,7 +5,7 @@
 
 
 <header class="fixed top-0 z-50 w-full">
-    <nav class="flex items-center justify-between mx-auto py-5 px-5 lg:px-40 text-WhiteF">
+    <nav class="flex items-center justify-between mx-auto py-5 px-5 lg:px-28 xl:px-40 text-WhiteF bg-blueF">
       
       <!-- Logo -->
       <h2 class="flex items-center rtl:space-x-reverse">
@@ -52,8 +52,8 @@
       </div>
 
       <!-- Demo Button -->
-      <button id="demobtn" class="hidden lg:block relative overflow-hidden bg-WhiteF text-blueF rounded-sm py-1 px-5 group">
-        <span class="relative z-10 font-bold">Demo</span>
+      <button id="demobtn" class="hidden lg:block relative overflow-hidden bg-WhiteF text-blueF rounded-sm px-5 group">
+        <p class="relative z-10 font-bold leading-tight hover:text-white transition">Próximamente <span class="block">Demo</span> </p>
         <div class="absolute inset-0 bg-blue-500 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300"></div>
     </button>
     </nav>
@@ -76,7 +76,7 @@
       <div class="flex justify-center mt-12 mb-28">
         <button class="relative overflow-hidden bg-light-blue rounded-sm w-full py-1 h-14 px-5 group">
           <p class="relative z-10 font-bold text-white text-2xl flex items-center justify-center">
-                <span class="w-full">Demo</span> 
+                <span class="w-full">Próximamente - Demo</span> 
                 <svg class="mx-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 16 16">
                     <path fill="currentColor" d="M10.586 4H4V2h10v10h-2V5.414l-8.293 8.293l-1.414-1.414z" />
                 </svg>
@@ -89,8 +89,9 @@
       <div class=" text-white">
         <ul class="flex flex-col items-center justify-center flex-grow text-2xl">
             <li class="border-t-2 w-full text-center py-5"><a href="/" class="hover:text-blue-300">Home</a></li>
+            <li class="border-t-2 w-full text-center py-5"><a href="/about" class="hover:text-blue-300">Sobre Nosotros</a></li>
             <li class="border-t-2 w-full text-center py-5 flex justify-center items-center cursor-pointer" id="services-toggle">
-                <a class="hover:text-blue-300 flex items-center">Services
+                <a class="hover:text-blue-300 flex items-center">Servicios
                   <svg id="services-arrow" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="ml-2 w-6 h-6 transition-transform duration-300">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                   </svg>
@@ -109,8 +110,7 @@
                   <a href="/service3" class="block">Service 3</a>
                 </li>
               </ul>
-            <li class="border-t-2 w-full text-center py-5"><a href="/pricing" class="hover:text-blue-300">Pricing</a></li>
-            <li class="border-t-2 w-full text-center py-5"><a href="/contact" class="hover:text-blue-300">Contact</a></li>
+            <li class="border-t-2 w-full text-center py-5"><a href="/contact" class="hover:text-blue-300">Contacto</a></li>
             <li class="border-t-2 w-full text-center py-5"><a href="/portal" class="hover:text-blue-300">Portal</a></li>
         </ul>
       </div>
