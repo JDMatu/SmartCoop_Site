@@ -38,14 +38,6 @@
         <ul class="flex flex-col font-medium p-4 md:p-0 mt-4 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0">
           <li><a href="/" class="hover:text-light-blue ">Home</a></li>
           <li><a href="/about" class="hover:text-light-blue">Sobre Nosotros</a></li>
-          <li class="relative group">
-            <a class="hover:text-light-blue">Servicios</a>
-            <ul class="absolute w-48 left-0 hidden group-hover:block mt-2 space-y-2 bg-white text-black shadow-lg rounded-md p-2">
-              <li><a href="/service1" class="block p-2 hover:bg-blue-500 hover:text-white rounded-sm">Service 1</a></li>
-              <li><a href="/service2" class="block p-2 hover:bg-blue-500 hover:text-white rounded-sm">Service 2</a></li>
-              <li><a href="/service3" class="block p-2 hover:bg-blue-500 hover:text-white rounded-sm">Service 3</a></li>
-            </ul>
-          </li>
           <li><a href="/contact" class="hover:text-light-blue">Contacto</a></li>
           <li><a href="/portal" class="hover:text-light-blue">Portal</a></li>
         </ul>
@@ -53,7 +45,7 @@
 
       <!-- Demo Button -->
       <button id="demobtn" class="hidden lg:block relative overflow-hidden bg-WhiteF text-blueF rounded-sm px-5 group">
-        <p class="relative z-10 font-bold leading-tight hover:text-white transition">Próximamente <span class="block">Demo</span> </p>
+        <p class="relative z-10 font-bold hover:text-white transition p-1">Demo</p>
         <div class="absolute inset-0 bg-blue-500 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300"></div>
     </button>
     </nav>
@@ -74,9 +66,9 @@
   
       <!-- Demo Button -->
       <div class="flex justify-center mt-12 mb-28">
-        <button class="relative overflow-hidden bg-light-blue rounded-sm w-full py-1 h-14 px-5 group">
+        <button id="demobtn2" class="relative overflow-hidden bg-light-blue rounded-sm w-full py-1 h-14 px-5 group">
           <p class="relative z-10 font-bold text-white text-2xl flex items-center justify-center">
-                <span class="w-full">Próximamente - Demo</span> 
+                <span class="w-full">Demo</span> 
                 <svg class="mx-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 16 16">
                     <path fill="currentColor" d="M10.586 4H4V2h10v10h-2V5.414l-8.293 8.293l-1.414-1.414z" />
                 </svg>
@@ -116,6 +108,33 @@
       </div>
     </div>
   
+    <div id="demo-modal" class="fixed inset-0 flex px-10 invisible items-center justify-center bg-black bg-opacity-80">
+      <div class="relative p-6 rounded-lg max-w-lg lg:max-w-2xl w-full bg-WhiteF">
+          <button id="close-modal" class="absolute top-0 right-2 z-10 text-4xl text-blueF">&times;</button>
+
+            <h2 class="text-2xl font-bold mb-4">Solicitar Demo</h2>
+            <p class="mb-4 text-gray-600"> Los datos serán utilizados para gestionar tu solicitud de demo. Recibirás por correo electrónico las instrucciones necesarias para acceder y utilizar el demo de manera adecuada.</p>
+            <form id="demo-form" class="space-y-6">
+              <input type="hidden" name="from" id="from" value="demo">
+              <div>
+                <input type="text" id="name" name="name" placeholder="Nombre" required class="block w-full mt-1 p-2 border-b-2 border-gray-600  bg-transparent rounded-md  focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+              </div>
+              
+              <div>
+                <input type="email" id="email" name="email" placeholder="example@gmail.com" required class="block w-full mt-1 p-2 border-b-2 border-gray-600 bg-transparent rounded-md focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+              </div>
+              <input type="hidden" name="asunto" id="asunto" value="Solicitud de demo">
+              <input type="hidden" name="message" id="message" value="Solicito formalmente un demo de la aplicación.">
+
+              <div class="flex justify-end space-x-2 pt-5">
+                <button type="submit" class="px-4 py-2 bg-blue-500 text-white rounded-md">Solicitar</button>
+              </div>
+            </form>
+      </div>
+    </div>
+
+
+
   </header>
   
   <script>
@@ -142,6 +161,60 @@
           servicesArrow.classList.toggle('rotate-180');
       });
       
+
+      // Modal
+      const closeModal = document.getElementById('close-modal');
+      const demoModal = document.getElementById('demo-modal');
+
+      function handleModal(button, modal, closeBtn) {
+        button.addEventListener('click', (event) => {
+            event.preventDefault();
+            modal.classList.remove('invisible');
+            mobileMenu.classList.add('hidden');
+        });
+        closeBtn.addEventListener('click', () => {
+            modal.classList.add('invisible');
+        });
+        window.addEventListener('click', (event) => {
+            if (event.target === modal) {
+                modal.classList.add('invisible');
+            }
+        });
+      }
+
+      handleModal(document.getElementById('demobtn'), demoModal, closeModal);
+      handleModal(document.getElementById('demobtn2'), demoModal, closeModal);
+
+
+
+
+      const form = document.getElementById('demo-form') as HTMLFormElement;
+      form.addEventListener('submit', async (event) => {
+        event.preventDefault();
+  
+        console.log('Formulario enviado'); // Para verificar que el evento se dispara
+  
+        const formData = new FormData(form);
+        const data = Object.fromEntries(formData.entries());
+  
+        try {
+          const response = await fetch('/api/send-email', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+          });
+          const result = await response.json();
+          alert(result.message);
+        } catch (error) {
+          console.error('Error al enviar el correo:', error); // Para ver errores en consola
+          alert('Error al enviar el correo');
+        }
+      });
+
+
+
     });
 
 
