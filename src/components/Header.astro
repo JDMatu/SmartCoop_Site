@@ -122,9 +122,6 @@
       const navToggle = document.getElementById('nav-toggle');
       const closeMenu = document.getElementById('close-menu');
       const mobileMenu = document.getElementById('mobile-menu');
-      const servicesToggle = document.getElementById('services-toggle');
-      const servicesListMobile = document.getElementById('services-list-mobile');
-      const servicesArrow = document.getElementById('services-arrow');
   
       // Toggle mobile menu
       navToggle.addEventListener('click', function () {
@@ -135,12 +132,6 @@
       closeMenu.addEventListener('click', function () {
         mobileMenu.classList.add('hidden');
       });
-  
-      servicesToggle.addEventListener('click', function () {
-          servicesListMobile.classList.toggle('hidden');            
-          servicesArrow.classList.toggle('rotate-180');
-      });
-      
 
       // Modal
       const closeModal = document.getElementById('close-modal');
