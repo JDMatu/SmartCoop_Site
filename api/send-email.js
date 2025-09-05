@@ -23,7 +23,7 @@ export default async function (req, res) {
       },
       {
         from: 'contacto@smartcoopcr.com',
-        to: email,
+        to: 'juandiegomatute11@gmail.com',
         subject: 'Demo SmartCoop',
         html: demoEmailHtml,
       },
